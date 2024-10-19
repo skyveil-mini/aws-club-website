@@ -20,7 +20,8 @@ body {
     flex-direction: column;
 
     background: linear-gradient(#110626, #380691);
-    background-image: url(./assets/background.png);
+    background-image: url(./assets/stars_texture.webp),
+                      url(./assets/background.png);
     background-size: 100vw;
     background-repeat: repeat;
     backdrop-filter: blur(0px);
@@ -162,15 +163,24 @@ main > * {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    mask-image: linear-gradient(90deg, transparent, black 20%);
 }
 
 .perk-list {
     font-size: 1.5rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    gap: 1rem;
 }
 
 .perk-list > span {
     padding: 1rem 1.5rem;
+    text-wrap: nowrap;
 }
 
 footer {
@@ -193,3 +203,16 @@ footer {
 /* linear-gradient(-45deg, black 20%, transparent 40%); */
 /* mask-size: 50%; */
 /* mask-image: linear-gradient(0deg, transparent, black 50%); */
+
+.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    transform: translateY(50px);
+    transition: all 1s;
+}
+
+.show {
+    transform: translateY(0);
+    transform: scale(1);
+    opacity: 1;
+}
